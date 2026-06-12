@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌍 Planeta Limpo - Vamos Cuidar do Nosso Mundo!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🌸 Planeta Limpo</div>
+            <ul class="nav-menu">
+                <li><a href="#hero">Início</a></li>
+                <li><a href="#saiba">Saiba Mais</a></li>
+                <li><a href="#dicas">Dicas</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+                <li><a href="#brincadeira">Diversão</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>🌍 Planeta Limpo</h1>
+            <p>Vamos juntos cuidar do nosso mundo querido! 💚</p>
+            <p class="subtitle">Aprenda, divirta-se e faça diferença!</p>
+            <button class="btn btn-primary" onclick="scrollToSection('saiba')">Começar Agora!</button>
+        </div>
+        <div class="floating-elements">
+            <span class="float-emoji">🌸</span>
+            <span class="float-emoji">🦋</span>
+            <span class="float-emoji">🌺</span>
+        </div>
+    </section>
+
+    <!-- SEÇÃO O QUE É POLUIÇÃO -->
+    <section id="saiba" class="saiba-mais">
+        <h2>O Que é Poluição? 🤔</h2>
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-icon">🌫️</div>
+                <h3>Poluição do Ar</h3>
+                <p>Quando gases e partículas machucam nosso ar fofo. Vem de carros, fábricas e não cuida bem!</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">💧</div>
+                <h3>Poluição da Água</h3>
+                <p>Quando plásticos, lixo e produtos ruins entram nos rios, lagos e oceanos. Coitados dos peixes!</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🌱</div>
+                <h3>Poluição do Solo</h3>
+                <p>Quando o lixo e produtos químicos danificam a terra onde as plantas crescem.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🔊</div>
+                <h3>Poluição Sonora</h3>
+                <p>Quando barulhos muito altos machucam os ouvidos dos animais e das pessoas. Silêncio por favor!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DICAS -->
+    <section id="dicas" class="dicas">
+        <h2>💡 Dicas Supimpa Para Ajudar!</h2>
+        <div class="tips-container">
+            <div class="tip">
+                <div class="tip-number">1️⃣</div>
+                <h3>Recicle Sempre!</h3>
+                <p>Separe plástico, papel e vidro. Eles podem virar coisas novas e legais!</p>
+                <div class="tip-action">♻️ Crie uma estação de reciclagem em casa!</div>
+            </div>
+            <div class="tip">
+                <div class="tip-number">2️⃣</div>
+                <h3>Use Menos Plástico</h3>
+                <p>Leve sacolas de pano ao mercado e use garrafas reutilizáveis.</p>
+                <div class="tip-action">🛍️ Diga não aos plásticos descartáveis!</div>
+            </div>
+            <div class="tip">
+                <div class="tip-number">3️⃣</div>
+                <h3>Economize Água</h3>
+                <p>Tome banhos rápidos, feche a torneira enquanto escova os dentes!</p>
+                <div class="tip-action">🚿 Cada gota é preciosa!</div>
+            </div>
+            <div class="tip">
+                <div class="tip-number">4️⃣</div>
+                <h3>Plante Árvores</h3>
+                <p>Árvores limpam o ar e deixam tudo mais bonito e fresco!</p>
+                <div class="tip-action">🌳 Adote uma árvore!</div>
+            </div>
+            <div class="tip">
+                <div class="tip-number">5️⃣</div>
+                <h3>Ande Mais, Dirija Menos</h3>
+                <p>Use bicicleta, caminhe ou use transporte público!</p>
+                <div class="tip-action">🚲 Mexa esse corpinho!</div>
+            </div>
+            <div class="tip">
+                <div class="tip-number">6️⃣</div>
+                <h3>Consuma com Consciência</h3>
+                <p>Compre apenas o que precisa e escolha produtos eco-friendly!</p>
+                <div class="tip-action">🛒 Compre com o coração!</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUIZ INTERATIVO -->
+    <section id="quiz" class="quiz-section">
+        <h2>🧠 Teste Seus Conhecimentos!</h2>
+        <div class="quiz-container">
+            <div id="quiz-content"></div>
+            <button class="btn btn-secondary" onclick="showNextQuestion()" style="display:none;" id="next-btn">Próxima Pergunta</button>
+            <button class="btn btn-primary" onclick="restartQuiz()" style="display:none;" id="restart-btn">Fazer Quiz Novamente</button>
+        </div>
+        <div id="quiz-result" class="quiz-result"></div>
+    </section>
+
+    <!-- SEÇÃO DIVERSÃO -->
+    <section id="brincadeira" class="diversao">
+        <h2>🎮 Diversão Garantida!</h2>
+        
+        <!-- Mini Jogo: Colete Lixo -->
+        <div class="game-card">
+            <h3>🎯 Caça ao Lixo</h3>
+            <p>Clique nos lixos para recolhê-los! Quanto mais rápido, melhor!</p>
+            <div class="game-area" id="game-area">
+                <div class="score-board">
+                    Lixos Coletados: <span id="trash-score">0</span>/5
+                </div>
+                <!-- Lixos aparecerão aqui dinamicamente -->
+            </div>
+            <button class="btn btn-primary" onclick="startTrashGame()">Começar Jogo</button>
+        </div>
+
+        <!-- Mini Jogo: Memória -->
+        <div class="game-card">
+            <h3>🧩 Jogo da Memória Eco</h3>
+            <p>Encontre os pares de emojis! Você consegue? 🌍</p>
+            <div class="memory-game" id="memory-game"></div>
+            <button class="btn btn-primary" onclick="startMemoryGame()">Começar Jogo</button>
+        </div>
+
+        <!-- Gerador de Frase Motivacional -->
+        <div class="game-card">
+            <h3>✨ Frase Motivacional do Dia</h3>
+            <p>Clique para receber uma mensagem motivacional!</p>
+            <div class="motivational-box">
+                <p id="motivational-text">Clique no botão para receber inspiração!</p>
+            </div>
+            <button class="btn btn-primary" onclick="getMotivationalPhrase()">Inspire-me!</button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>💚 Feito com amor para cuidar do nosso planeta! 🌍</p>
+        <p>Toda ação conta. Comece hoje mesmo!</p>
+        <div class="footer-emojis">
+            🌸 🌺 🌼 🌻 🌷 🌹 🦋 🐝 🐞 🐢 🐠
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>

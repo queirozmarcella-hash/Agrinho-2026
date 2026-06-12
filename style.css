@@ -1,0 +1,679 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pink-light: #FFB6D9;
+    --pink-medium: #FF8FB3;
+    --pink-dark: #FF69B4;
+    --white-cream: #FFF5F8;
+    --green-soft: #A8E6A1;
+    --green-accent: #7FD87F;
+    --shadow: 0 8px 20px rgba(255, 107, 148, 0.2);
+    --shadow-hover: 0 12px 30px rgba(255, 107, 148, 0.3);
+}
+
+/* ========== FONTES E GERAIS ========== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--white-cream) 0%, #FFE8F0 100%);
+    color: #555;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+    background: linear-gradient(90deg, var(--pink-light) 0%, var(--pink-medium) 100%);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.nav-menu a:hover {
+    transform: translateY(-2px);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 5px 0;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+    text-align: center;
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, var(--white-cream) 0%, #FFE8F0 50%, #FFD6E8 100%);
+    position: relative;
+    overflow: hidden;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    animation: slideInUp 0.8s ease;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    color: var(--pink-dark);
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(255, 107, 148, 0.2);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.hero .subtitle {
+    font-size: 1.2rem;
+    color: var(--pink-medium);
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+/* Elementos flutuantes */
+.floating-elements {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.float-emoji {
+    position: absolute;
+    font-size: 3rem;
+    animation: float 6s ease-in-out infinite;
+    opacity: 0.6;
+}
+
+.float-emoji:nth-child(1) {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.float-emoji:nth-child(2) {
+    top: 60%;
+    right: 15%;
+    animation-delay: 2s;
+}
+
+.float-emoji:nth-child(3) {
+    bottom: 20%;
+    left: 20%;
+    animation-delay: 4s;
+}
+
+/* ========== BOTÕES ========== */
+.btn {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: var(--shadow);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--pink-dark) 0%, var(--pink-medium) 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, var(--green-soft) 0%, var(--green-accent) 100%);
+    color: white;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* ========== SEÇÃO SAIBA MAIS ========== */
+.saiba-mais {
+    padding: 5rem 2rem;
+    background: var(--white-cream);
+    text-align: center;
+}
+
+.saiba-mais h2 {
+    font-size: 2.5rem;
+    color: var(--pink-dark);
+    margin-bottom: 3rem;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    border-top: 5px solid var(--pink-light);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    color: var(--pink-dark);
+    margin-bottom: 1rem;
+}
+
+.card p {
+    color: #666;
+    line-height: 1.8;
+}
+
+/* ========== SEÇÃO DICAS ========== */
+.dicas {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #FFE8F0 0%, #FFD6E8 100%);
+}
+
+.dicas h2 {
+    font-size: 2.5rem;
+    color: var(--pink-dark);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.tips-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tip {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    border-left: 5px solid var(--green-soft);
+}
+
+.tip:hover {
+    transform: translateX(10px);
+    box-shadow: var(--shadow-hover);
+}
+
+.tip-number {
+    font-size: 2rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.tip h3 {
+    color: var(--pink-dark);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.tip p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.tip-action {
+    background: linear-gradient(135deg, var(--pink-light) 0%, var(--pink-medium) 100%);
+    color: white;
+    padding: 0.8rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* ========== SEÇÃO QUIZ ========== */
+.quiz-section {
+    padding: 5rem 2rem;
+    background: var(--white-cream);
+    text-align: center;
+}
+
+.quiz-section h2 {
+    font-size: 2.5rem;
+    color: var(--pink-dark);
+    margin-bottom: 3rem;
+}
+
+.quiz-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.quiz-question {
+    margin-bottom: 2rem;
+    animation: slideInUp 0.5s ease;
+}
+
+.quiz-question h3 {
+    color: var(--pink-dark);
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.option-btn {
+    padding: 1rem;
+    background: linear-gradient(135deg, #FFE8F0 0%, #FFD6E8 100%);
+    border: 2px solid var(--pink-light);
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.option-btn:hover {
+    background: linear-gradient(135deg, var(--pink-light) 0%, var(--pink-medium) 100%);
+    color: white;
+    border-color: var(--pink-dark);
+}
+
+.option-btn.correct {
+    background: linear-gradient(135deg, var(--green-soft) 0%, var(--green-accent) 100%);
+    color: white;
+    border-color: var(--green-accent);
+}
+
+.option-btn.incorrect {
+    background: linear-gradient(135deg, #FFB6C1 0%, #FF69B4 100%);
+    color: white;
+    border-color: #FF1493;
+}
+
+.quiz-result {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--pink-dark);
+    min-height: 50px;
+}
+
+#next-btn,
+#restart-btn {
+    margin-top: 1.5rem;
+}
+
+/* ========== SEÇÃO DIVERSÃO ========== */
+.diversao {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #FFE8F0 0%, #FFD6E8 100%);
+}
+
+.diversao h2 {
+    font-size: 2.5rem;
+    color: var(--pink-dark);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.game-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    max-width: 500px;
+    margin: 2rem auto;
+    text-align: center;
+    border-top: 5px solid var(--green-soft);
+}
+
+.game-card h3 {
+    color: var(--pink-dark);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.game-card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+/* Game Area */
+.game-area {
+    background: linear-gradient(135deg, #FFE8F0 0%, #FFD6E8 100%);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    min-height: 200px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.score-board {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 20px;
+    font-weight: 600;
+    color: var(--pink-dark);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.trash-item {
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    animation: pop 0.5s ease;
+}
+
+.trash-item:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+}
+
+/* Memory Game */
+.memory-game {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #FFE8F0 0%, #FFD6E8 100%);
+    padding: 1.5rem;
+    border-radius: 15px;
+    min-height: 300px;
+}
+
+.memory-card {
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, var(--pink-light) 0%, var(--pink-medium) 100%);
+    border: 2px solid var(--pink-dark);
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.memory-card:hover {
+    transform: scale(1.05);
+}
+
+.memory-card.flipped {
+    background: white;
+    border-color: var(--green-accent);
+}
+
+.memory-card.matched {
+    background: linear-gradient(135deg, var(--green-soft) 0%, var(--green-accent) 100%);
+    border-color: var(--green-accent);
+}
+
+/* Motivational Box */
+.motivational-box {
+    background: linear-gradient(135deg, var(--pink-light) 0%, var(--pink-medium) 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#motivational-text {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+    background: linear-gradient(135deg, var(--pink-light) 0%, var(--pink-medium) 100%);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+.footer p {
+    margin: 0.5rem 0;
+    font-weight: 500;
+}
+
+.footer-emojis {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    letter-spacing: 5px;
+}
+
+/* ========== ANIMAÇÕES ========== */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ========== RESPONSIVIDADE ========== */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .hero .subtitle {
+        font-size: 1rem;
+    }
+
+    .float-emoji {
+        font-size: 2rem;
+    }
+
+    .saiba-mais h2,
+    .dicas h2,
+    .quiz-section h2,
+    .diversao h2 {
+        font-size: 1.8rem;
+    }
+
+    .cards-container,
+    .tips-container {
+        grid-template-columns: 1fr;
+    }
+
+    .memory-game {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    section {
+        padding: 3rem 1rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-menu {
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        flex-direction: column;
+        background-color: var(--pink-light);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding: 2rem 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .memory-game {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+
+    .memory-card {
+        font-size: 1.5rem;
+    }
+
+    .tip-number,
+    .card-icon {
+        font-size: 2.5rem;
+    }
+}
